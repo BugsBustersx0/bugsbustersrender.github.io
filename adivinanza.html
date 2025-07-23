@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width">
+
+ <title>Servicio que procesa un formulario - BugsBusters</title>
+
+</head>
+
+<body>
+
+ <h1>Servicio que procesa un formulario - BugsBusters</h1>
+
+ <form onsubmit="procesaForm(event) ">
+
+    <p>
+   <strong>Adivinanza:</strong>  
+   <em>“Blanca por dentro, verde por fuera. Si quieres que te lo diga, espera.”</em>
+  </p>
+  <p>
+   <label>
+    Tu respuesta:
+    <input name="respuesta">
+   </label>
+  </p>
+
+  <p><button type="submit">Procesa</button></p>
+
+ </form>
+
+ <script type="module">
+
+  import { exportaAHtml } from "./lib/js/exportaAHtml.js"
+  import { muestraError } from "./lib/js/muestraError.js"
+  import { submitForm } from "./lib/js/submitForm.js"
+
+  /**
+   * @param {Event} event
+   */
+  async function procesaForm(event) {
+   try {
+    const respuesta =
+     await submitForm(
+      "srv/procesa.php", event)
+    alert(respuesta.body)
+   } catch (error) {
+    muestraError(error)
+   }
+  }
+  exportaAHtml(procesaForm)
+
+ </script>
+
+</body>
+
+</html>
