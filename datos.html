@@ -6,13 +6,16 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width">
 
- <title>Servicio que recibe y devuelve JSON</title>
+ <title>Servicio que recibe y devuelve JSON - BugsBusters</title>
 
 </head>
 
 <body>
 
- <h1>Servicio que recibe y devuelve JSON</h1>
+ <h1>Servicio que recibe y devuelve JSON - BugsBusters</h1>
+ <h2>Clima de Ciudad Nezahualcóyotl</h2>
+
+ <a href="index.html">Inicio</a>
 
  <p><button onclick="envia()">Envía JSON</button></p>
 
@@ -25,8 +28,13 @@
   async function envia() {
    try {
     const datos = {
-     saludo: "Hola",
-     nombre: "pp"
+     ciudad: "Ciudad Nezahualcóyotl",
+     temperatura: "27°C",
+     clima: "Mayormente soleado",
+     humedad: "Humedad: 45%",
+     viento: "Viento: 20 km/h",
+     salida: "Salida del sol: 6:10 a.m.",
+     puesta: "Puesta del sol: 7:48 p.m."
     }
     const respuesta =
      await enviaJson(

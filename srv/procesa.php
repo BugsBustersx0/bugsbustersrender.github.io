@@ -7,12 +7,12 @@ $saludo = recuperaTexto("saludo");
 $nombre = recuperaTexto("nombre");
 $respuesta = strtolower(trim(recuperaTexto("respuesta")));
 
-$esCorrecta = ($respuesta === "pera" || $respuesta === "Pera");
+$esCorrecta = ($respuesta === "reloj" || $respuesta === "Reloj");
 
 $mensaje = "{$saludo} {$nombre}. ";
 
 if ($esCorrecta) {
-  $mensaje .= "¡Correcto! 🎉 La respuesta a la adivinanza es 'Pera'.";
+  $mensaje .= "¡Correcto! 🎉 La respuesta a la adivinanza es ${respuesta}.";
 } else {
   $mensaje .= "Respuesta incorrecta. ❌ Intenta de nuevo.";
 }
