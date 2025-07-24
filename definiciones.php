@@ -8,6 +8,8 @@
 
  <title>Render en el servidor</title>
 
+ <a href="index.html">Inicio</a>
+
  <script type="module" src="lib/js/consumeJson.js"></script>
  <script type="module" src="lib/js/muestraObjeto.js"></script>
  <script type="module" src="lib/js/muestraError.js"></script>
